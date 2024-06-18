@@ -1,0 +1,153 @@
+[gd_scene load_steps=11 format=3 uid="uid://bihihj6icjla1"]
+
+[ext_resource type="Texture2D" uid="uid://cxxk1uqbd2owb" path="res://Images/icon.svg" id="1_fkqy8"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_nvagq"]
+[ext_resource type="Texture2D" uid="uid://clpj6o8snf8l2" path="res://Images/computer.png" id="3_mqdsn"]
+[ext_resource type="PackedScene" uid="uid://nepf7kyg1ee3" path="res://Scenes/Pot.tscn" id="4_ukrlk"]
+[ext_resource type="Texture2D" uid="uid://dalayjqdbp3pc" path="res://Images/pot.png" id="5_uishe"]
+[ext_resource type="Texture2D" uid="uid://dthmx7lrw4yq5" path="res://Images/pot with soil.png" id="6_ysshr"]
+[ext_resource type="Texture2D" uid="uid://bkr7j74y83o3b" path="res://Images/seeds.png" id="7_p6rsv"]
+[ext_resource type="Texture2D" uid="uid://bph5uytc8w5v7" path="res://Images/watering can.png" id="8_gt233"]
+[ext_resource type="Texture2D" uid="uid://ij5kso1u1gk2" path="res://Images/corn.png" id="9_4kseg"]
+
+[sub_resource type="GDScript" id="GDScript_ldrou"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nvagq")
+
+[node name="Worker" type="Sprite2D" parent="."]
+position = Vector2(0, -190)
+texture = ExtResource("1_fkqy8")
+
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(253.5, 466.5)
+scale = Vector2(1.71146, 1.36411)
+texture = ExtResource("3_mqdsn")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Game Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Water" type="Button" parent="Game Screen"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = -55.0
+offset_right = 504.0
+offset_bottom = 66.0
+text = "Water Pitcher"
+
+[node name="Coin Counter" type="Label" parent="Game Screen"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = -315.0
+offset_right = 569.0
+offset_bottom = -257.0
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "Coins: "
+
+[node name="Shop" type="Button" parent="Game Screen"]
+layout_mode = 2
+offset_left = -515.0
+offset_top = 242.0
+offset_right = -440.0
+offset_bottom = 301.0
+text = "Shop"
+
+[node name="Options" type="Button" parent="Game Screen"]
+layout_mode = 2
+offset_left = 438.0
+offset_top = 245.0
+offset_right = 508.0
+offset_bottom = 304.0
+text = "Options"
+
+[node name="Inventory" type="Button" parent="Game Screen"]
+visible = false
+layout_mode = 0
+offset_left = -397.0
+offset_top = 240.0
+offset_right = -292.0
+offset_bottom = 301.0
+text = "Inventory"
+script = SubResource("GDScript_ldrou")
+
+[node name="Pot" parent="Game Screen" instance=ExtResource("4_ukrlk")]
+layout_mode = 0
+offset_left = -482.0
+offset_top = -19.0
+offset_right = -408.0
+offset_bottom = 61.0
+
+[node name="Pot_image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-257, 5)
+scale = Vector2(0.116562, 0.137864)
+texture = ExtResource("5_uishe")
+
+[node name="PotWithSoil_image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-256.25, 4.875)
+scale = Vector2(0.626389, 0.599306)
+texture = ExtResource("6_ysshr")
+
+[node name="Seeds_image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-366, -153)
+scale = Vector2(0.622222, 0.558333)
+texture = ExtResource("7_p6rsv")
+
+[node name="WateringCan_image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-199, -175)
+rotation = -0.724312
+scale = Vector2(0.298, 0.318591)
+texture = ExtResource("8_gt233")
+
+[node name="Corn" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-254, -12)
+scale = Vector2(0.45382, 0.616667)
+texture = ExtResource("9_4kseg")
+
+[node name="Win Text" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -100.0
+offset_right = 111.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "You win!!"
+
+[connection signal="pressed" from="Game Screen/Water" to="." method="_on_button_pressed"]
+[connection signal="visibility_changed" from="Game Screen/Water" to="." method="_on_water_visibility_changed"]
+[connection signal="pressed" from="Game Screen/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Game Screen/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Game Screen/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="Game Screen/Pot" to="." method="_on_pot_pressed"]

@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1718689393
+game.tscn::PackedScene::-1::1718686657::0::1::::<><>::
+MyScene.tscn::PackedScene::-1::1718685870::0::1::::<><>::
+::res://Images/::1718690055
+computer.png::CompressedTexture2D::5576486913402297741::1718679262::1718689172::1::::<><>::
+corn.png::CompressedTexture2D::581930484869481303::1718690055::1718690055::1::::<><>::
+icon.svg::CompressedTexture2D::6435320135207909837::1696784801::1718689172::1::::<><>::
+pot with soil.png::CompressedTexture2D::8508072100196369990::1718689418::1718689418::1::::<><>::
+pot.png::CompressedTexture2D::7182013562992965208::1718689186::1718689187::1::::<><>::
+Screenshot 2023-06-10 151811.png::CompressedTexture2D::8253826064868327260::1696785012::1718689172::1::::<><>::
+seeds.png::CompressedTexture2D::3125364284488311585::1718689186::1718689186::1::::<><>::
+soil.png::CompressedTexture2D::5811850015964571630::1718689186::1718689186::1::::<><>::
+watering can.png::CompressedTexture2D::3455562498250654498::1718689554::1718689554::1::::<><>::
+::res://Scenes/::1718689974
+game.tscn::PackedScene::2962880834540855278::1718689974::0::1::::<><>::uid://cxxk1uqbd2owb::::res://Images/icon.svg<>res://Scripts/game.gd<>uid://clpj6o8snf8l2::::res://Images/computer.png<>uid://nepf7kyg1ee3::::res://Scenes/Pot.tscn<>uid://dalayjqdbp3pc::::res://Images/pot.png<>uid://dthmx7lrw4yq5::::res://Images/pot with soil.png<>uid://bkr7j74y83o3b::::res://Images/seeds.png<>uid://bph5uytc8w5v7::::res://Images/watering can.png
+options_menu.tscn::PackedScene::6637054714957850059::1718689810::0::1::::<><>::res://Scripts/options_menu.gd
+Pot.tscn::PackedScene::921633859466425188::1718685003::0::1::::<><>::res://Scripts/Pot.gd
+shop.tscn::PackedScene::8101412080688917244::1718689810::0::1::::<><>::res://Scripts/Shop.gd<>uid://clpj6o8snf8l2::::res://Images/computer.png<>uid://dalayjqdbp3pc::::res://Images/pot.png<>uid://bkr7j74y83o3b::::res://Images/seeds.png<>uid://co2kk5wqe2l6m::::res://Images/soil.png
+::res://Scripts/::1718689974
+game.gd::GDScript::-1::1718689974::0::1::::<>Node2D<>::
+Global.gd::GDScript::-1::1718684880::0::1::::<>Node2D<>::
+options_menu.gd::GDScript::-1::1718680164::0::1::::<>Control<>::
+Pot.gd::GDScript::-1::1718684929::0::1::::<>Button<>::
+Shop.gd::GDScript::-1::1718685157::0::1::::<>Control<>::
